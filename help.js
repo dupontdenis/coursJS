@@ -1,7 +1,6 @@
 const array = [15, 15, 9, 15, 14, 7, 16, 16, 29];
 
-// moyenne
-
+// trouver la moyenne
 let somme = 0;
 let count = 0;
 
@@ -16,7 +15,7 @@ console.log(
   `moyenne: ${moyenne ? moyenne.toFixed(2) : "undefined, le tableau est vide"}`,
 ); // Output: 15.11
 
-// max
+// trouver le maximum
 let max = array[0];
 for (let index = 1; index < array.length; index++) {
   const element = array[index];
@@ -27,7 +26,7 @@ for (let index = 1; index < array.length; index++) {
 console.log(`max: ${max}`); // Output: 29
 // console.log(`max: ${max?max:"undefined, le tableau est vide"}`); // Output: 29
 
-// min
+// trouver le minimum
 let min = array[0];
 for (let index = 1; index < array.length; index++) {
   const notes = array[index];
@@ -39,7 +38,7 @@ for (let index = 1; index < array.length; index++) {
 console.log(`min: ${min}`); // Output: 7
 // console.log(`min: ${min?min:"undefined, le tableau est vide"}`); // Output: 7
 
-// occurrence de 15
+// trouver occurrences de 15
 let count15 = 0;
 for (let index = 0; index < array.length; index++) {
   const element = array[index];
@@ -50,7 +49,7 @@ for (let index = 0; index < array.length; index++) {
 console.log(`occurence de 15: ${count15}`); // Output: 3
 // console.log(`occurence de 15: ${count15?count15:"undefined, le tableau est vide"}`); // Output: 3
 
-// valeur la plus fréquente
+// Trouver la valeur la plus fréquente
 let mostFrequent = array[0];
 let maxCount = 1;
 for (let i = 0; i < array.length; i++) {
@@ -68,7 +67,7 @@ for (let i = 0; i < array.length; i++) {
 console.log(`valeur la plus fréquente: ${mostFrequent}`); // Output: 15
 // console.log(`valeur la plus fréquente: ${mostFrequent?mostFrequent:"undefined, le tableau est vide"}`); // Output: 15
 
-// nombre d'admissions
+// trouver le nombre d'admissions (notes >= 10)
 let countAdmitted = 0;
 for (let index = 0; index < array.length; index++) {
   const element = array[index];
@@ -79,7 +78,7 @@ for (let index = 0; index < array.length; index++) {
 console.log(`nombre d'admissions: ${countAdmitted}`); // Output: 7
 // console.log(`nombre d'admissions: ${countAdmitted?countAdmitted:"undefined, le tableau est vide"}`); // Output: 7
 
-// nombre d'échecs
+// trouver le nombre d'échecs (notes < 10)
 let countFailed = 0;
 for (let index = 0; index < array.length; index++) {
   const element = array[index];
@@ -90,6 +89,8 @@ for (let index = 0; index < array.length; index++) {
 console.log(`nombre d'échecs: ${countFailed}`); // Output: 2
 // console.log(`nombre d'échecs: ${countFailed?countFailed:"undefined, le tableau est vide"}`); // Output: 2
 
+
+// trouver le nombre de mentions Passable (notes >= 10 et < 12), Assez bien (notes >= 12 et < 14), Bien (notes >= 14 et < 16), Très bien (notes >= 16 et < 18) et Excellent (notes >= 18)
 let countPassable = 0;
 let countAssezBien = 0;
 let countBien = 0;
@@ -118,7 +119,7 @@ console.log("Bien :", countBien);
 console.log("Très bien :", countTresBien);
 console.log("Excellent :", countExcellent);
 
-// version optimisée
+// version optimisée avec un tableau d'objets pour les mentions
 let mentions = [
   { nom: "Passable", min: 10, max: 12, count: 0 },
   { nom: "Assez bien", min: 12, max: 14, count: 0 },
@@ -140,7 +141,7 @@ for (let i = 0; i < array.length; i++) {
 
 console.table(mentions);
 
-// toutes les occurences de chaque note
+// toutes les occurences de chaque note dans un objet
 let occurrences = {};
 for (let i = 0; i < array.length; i++) {
   const note = array[i];
@@ -153,17 +154,4 @@ for (let i = 0; i < array.length; i++) {
 
 console.log("Occurrences de chaque note :", occurrences);
 
-// myincludes
-function myIncludes(array, value) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === value) {
-      return true;
-    }
-  }
-  return false;
-}
 
-console.log(myIncludes(array, 15)); // Output: true
-console.log(myIncludes(array, 5)); // Output: false
-console.log(myIncludes(array, 16)); // Output: true
-console.log(myIncludes(array, 20)); // Output: false
