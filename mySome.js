@@ -11,6 +11,6 @@ function mySome(array, fxn) {
 }
 
 console.log(mySome(array, (element) => element > 0)); // Output: true
-console.log(mySome(array, (element) => element % 0)); // Output: false
+console.log(mySome(array, (element) => element % 2)); // Output: false
 console.log(mySome(array, (element) => element <= 20)); // Output: true
 console.log(mySome(array, (element) => element == 15)); // Output: true
